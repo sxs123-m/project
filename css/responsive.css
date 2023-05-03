@@ -1,0 +1,34 @@
+/* 在此处添加响应式样式，使页面在不同设备和屏幕尺寸上正常显示 */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .schedule {
+        padding: 4%;
+    }
+
+    .schedule h2 {
+        font-size: 10vw;
+    }
+
+.bottom-section {
+    flex-direction: column;
+    align-items: center;
+}
+
+.cube-container {
+    margin-right: 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.video-container {
+    margin-top: 0;
+    width: 80%;
+    margin-top: 5%;
+}
+    #video-toggle {
+        font-size: 3vw;
+    }
+}

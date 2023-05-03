@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浪漫婚礼邀请页面</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap&subset=chinese-simplified&noto.script=Hans" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Zhi Mang Xing', cursive;
+        }
+        .schedule p {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            font-size: 24px; /* 修改字体大小 */
+        }
+        .video-container {
+            width: 90%;
+            margin: 30px auto;
+            display: flex;
+            justify-content: center;
+        }
+        .particle {
+            position: absolute;
+            background-color: #f06292; /* 修改粒子颜色为粉色 */
+            border-radius: 50%;
+            animation: particleMove 3s linear infinite; /* 加快粒子移动速度 */
+        }
+        @keyframes particleMove {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 在此处添加多个粒子特效元素 -->
+    <div class="container">
+        <div class="schedule">
+            <h2>婚礼日程安排</h2>
+            <p>时间：2023年6月18日 18:00</p>
+            <p>地点：北京某某酒店</p>
+        </div>
+        <div class="bottom-section">
+            <div class="cube-container">
+                <div class="cube">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face left"></div>
+                    <div class="face right"></div>
+                </div>
+            </div>
+            <div class="video-container">
+                <video id="wedding-video" src="assets/videos/video.mp4" muted autoplay loop></video>
+                <button id="video-toggle">播放/暂停</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function createParticle() {
+            const particle = document.createElement('span');
+            particle.classList.add('particle');
+            const size = Math.random() * 10 + 5;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 3000);
+        }
+
+        setInterval(createParticle, 100);
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
